@@ -15,9 +15,10 @@ class LaravelSubscriptionServiceProvider extends ServiceProvider
          * Optional methods to load your package assets
          */
         // $this->loadTranslationsFrom(__DIR__.'/../resources/lang', 'laravel-subscription');
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-subscription');
+         $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-subscription');
         // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
@@ -25,9 +26,9 @@ class LaravelSubscriptionServiceProvider extends ServiceProvider
             ], 'config');
 
             // Publishing the views.
-            /*$this->publishes([
+            $this->publishes([
                 __DIR__.'/../resources/views' => resource_path('views/vendor/laravel-subscription'),
-            ], 'views');*/
+            ], 'views');
 
             // Publishing assets.
             /*$this->publishes([
